@@ -22,8 +22,6 @@ function App() {
     }))
   }
 
-  console.log("Sushi: ", sushis)
-
   useEffect(() => {
     fetch(API)
     .then(res => res.json())
@@ -33,7 +31,7 @@ function App() {
   }, [])
   return (
     <div className="app">
-      <SushiContainer sushis={sushis} onSetSushis={setSushis} eatSushi={eatSushi}/>
+      <SushiContainer sushis={sushis} onSetSushis={setSushis} eatSushi={eatSushi} budget={budget} setBudget={setBudget}/>
       <Table plates={eatenSushis} budget={budget}/>
     </div>
   );
